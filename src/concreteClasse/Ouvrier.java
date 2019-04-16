@@ -8,6 +8,7 @@ public class Ouvrier extends AbstractElement{
 	private int nombreHeure;
 	
 	public Ouvrier(float s, int n) {
+		super();
 		setSalaireHoraire(s);
 		setNombreHeure(n);
 	}
@@ -30,14 +31,13 @@ public class Ouvrier extends AbstractElement{
 
 	@Override
 	public void accept(IVisitor visitor) {
-		// TODO Auto-generated method stub
+		visitor.visitOuvrier(this);
 		
 	}
 
 	@Override
 	public void calculerSalaire() {
-		// TODO Auto-generated method stub
-		
+		System.out.println("La salaire de l'ouvrier est "+ (getSalaireHoraire()*getNombreHeure()+5000));
 	}
 
 }
